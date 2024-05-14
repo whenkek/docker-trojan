@@ -6,8 +6,8 @@
 #       [-d ${domain}] 设置 trojan 域名
 # ------------------------
 
-PASSWORD="demo_password"
-DOMAIN="demo_domain.com"
+PASSWORD="password"
+DOMAIN="stardust.myddns.me"
 
 set -- `getopt p:d: "$@"`
 while [ -n "$1" ]
@@ -27,3 +27,4 @@ domain=${DOMAIN} \
 docker-compose build
 
 echo "finish ."
+

@@ -6,12 +6,12 @@
 
 WORKDIR=$1
 if [ -z "${WORKDIR}" ] ; then
-  WORKDIR="/usr/local/trojan-docker"
+  WORKDIR=`pwd`
 fi
 
 docker-compose down
 
-/usr/bin/certbot renew
+sudo certbot renew
 cat /etc/letsencrypt/live/*/fullchain.pem > ${WORKDIR}/cert/fullchain.pem
 cat /etc/letsencrypt/live/*/privkey.pem > ${WORKDIR}/cert/privkey.pem
 
